@@ -117,19 +117,19 @@ class AutowareBridge(Node):
         self._steering_status_publisher.publish(steering_status_msg)
 
         # Publish static contgrol mode
-        control_mode_msg = ControlModeReport()
-        control_mode_msg.stamp = self.get_clock().now().to_msg()
-        control_mode_msg.mode = 1
-        self._vehicle_control_mode_publisher.publish(control_mode_msg)
+        # ! control_mode_msg = ControlModeReport()
+        # ! control_mode_msg.stamp = self.get_clock().now().to_msg()
+        # ! control_mode_msg.mode = 1
+        # ! self._vehicle_control_mode_publisher.publish(control_mode_msg)
 
 
 
     def _control_callback(self, aw_ackermann_control_command_msg):
-        carla_ackermann_control = AckermannDrive()
-        carla_ackermann_control.steering_angle = aw_ackermann_control_command_msg.lateral.steering_tire_angle * 1.2
-        carla_ackermann_control.steering_angle_velocity = aw_ackermann_control_command_msg.lateral.steering_tire_rotation_rate * 1.2
-        carla_ackermann_control.speed = aw_ackermann_control_command_msg.longitudinal.speed
-        carla_ackermann_control.acceleration = aw_ackermann_control_command_msg.longitudinal.acceleration
-        carla_ackermann_control.jerk = aw_ackermann_control_command_msg.longitudinal.jerk
-        self._ackermann_pub.publish(carla_ackermann_control)
+        # ! carla_ackermann_control = AckermannDrive()
+        # ! carla_ackermann_control.steering_angle = aw_ackermann_control_command_msg.lateral.steering_tire_angle * 1.2
+        # ! carla_ackermann_control.steering_angle_velocity = aw_ackermann_control_command_msg.lateral.steering_tire_rotation_rate * 1.2
+        # ! carla_ackermann_control.speed = aw_ackermann_control_command_msg.longitudinal.speed
+        # ! carla_ackermann_control.acceleration = aw_ackermann_control_command_msg.longitudinal.acceleration
+        # ! carla_ackermann_control.jerk = aw_ackermann_control_command_msg.longitudinal.jerk
+        # ! celf._ackermann_pub.publish(carla_ackermann_control)
 
