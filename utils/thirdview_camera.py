@@ -8,9 +8,9 @@ spawn_points = world.get_map().get_spawn_points()
 
 actor_list = world.get_actors()
 
-vehicle = actor_list.filter('*volkswagen*')
+vehicle = actor_list.filter('*volkswagen.t2_2021*')
 
-vehicle = actor_list.find(47)
+vehicle = vehicle[0]
 
 
 def calculate_sides(hypotenuse, angle):
