@@ -29,9 +29,13 @@ def calculate_sides(hypotenuse, angle):
   
 metres_distance = 5
 
-while(1):
+vehicle_transform = vehicle.get_transform()
+print(vehicle.get_transform())
 
-  vehicle_transform = vehicle.get_transform()
+vehicle.set_transform(carla.Transform(carla.Location(x=3.047784, y=130.209518, z=-0.000458), carla.Rotation(pitch=0.000676, yaw=-179.647827, roll=0.000146)))
+
+print(vehicle.get_transform())
+while(1):
 
   spectator = world.get_spectator()
   spectator_pos = carla.Transform(vehicle_transform.location + carla.Location(x=20,y=10,z=4),
