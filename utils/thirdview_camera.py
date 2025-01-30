@@ -28,6 +28,7 @@ def calculate_sides(hypotenuse, angle):
   return opposite_side, adjacent_side
   
 metres_distance = 5
+vehicle_transform = vehicle.get_transform()
 
 while(1):
 
